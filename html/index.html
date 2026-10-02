@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Conheça a Rede Acolher, ONG fictícia com iniciativas de educação, segurança alimentar e convivência. Projeto acadêmico de front-end.">
+    <meta name="theme-color" content="#245c40">
+    <title>Início | Rede Acolher</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script src="../js/modulos/templates.js" defer></script>
+    <script src="../js/modulos/armazenamento.js" defer></script>
+    <script src="../js/cadastro.js" defer></script>
+    <script src="../js/interface.js" defer></script>
+    <script src="../js/modulos/projetos.js" defer></script>
+    <script src="../js/modulos/roteamento.js" defer></script>
+    <script src="../js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+    <!-- Cabeçalho e links de navegação. -->
+    <header class="cabecalho">
+      <div class="container">
+        <a class="marca" href="index.html">Rede Acolher</a>
+        <button class="menu-botao" type="button" aria-controls="menu-principal" aria-expanded="false" hidden>☰ Menu</button>
+        <nav id="menu-principal" class="menu-principal" aria-label="Navegação principal">
+          <ul>
+            <li><a href="index.html" aria-current="page">Início</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="cadastro.html">Participe</a></li>
+            <li class="item-submenu">
+              <details class="dropdown">
+                <summary>Áreas de atuação</summary>
+                <ul class="submenu">
+                  <li><a href="projetos.html#educacao">Educação</a></li>
+                  <li><a href="projetos.html#alimentacao">Alimentação</a></li>
+                  <li><a href="projetos.html#convivencia">Convivência</a></li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Conteúdo principal da página. -->
+    <main id="conteudo" tabindex="-1">
+      <section class="apresentacao" aria-labelledby="titulo-inicio">
+        <div class="container">
+          <div>
+            <h1 id="titulo-inicio">Conheça a Rede Acolher</h1>
+            <p class="introducao">A Rede Acolher é uma ONG fictícia que propõe ações de educação, alimentação e convivência. Este site apresenta a organização, seus projetos e um formulário para quem deseja participar.</p>
+            <div class="acoes">
+              <a class="botao" href="cadastro.html">Faça parte dessa rede</a>
+              <a class="link" href="projetos.html">Conheça os projetos</a>
+            </div>
+            <p class="legenda">Site acadêmico de uma organização fictícia.</p>
+          </div>
+          <figure class="ilustracao">
+            <picture>
+              <source srcset="../imagens/comunidade.webp" type="image/webp">
+              <source srcset="../imagens/comunidade.png" type="image/png">
+              <img src="../imagens/comunidade.svg" width="640" height="520" alt="Ilustração de pessoas reunidas ao redor de uma mesa, com livros e alimentos.">
+            </picture>
+            <figcaption>Ilustração de uma atividade comunitária.</figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="sobre" aria-labelledby="titulo-quem">
+        <div class="container">
+          <div>
+            <h2 id="titulo-quem">Quem somos</h2>
+          </div>
+          <div>
+            <p>A Rede Acolher é uma organização fictícia do terceiro setor criada para este projeto acadêmico. Sua proposta é fortalecer vínculos e ampliar o acesso a oportunidades em comunidades brasileiras.</p>
+            <p>Nossa missão é acolher famílias e promover autonomia, respeitando a diversidade e incentivando a participação de moradores, voluntários e apoiadores.</p>
+          </div>
+        </div>
+      </section>
+      <section class="container" id="contato" aria-labelledby="titulo-contato">
+        <h2 id="titulo-contato">Contato</h2>
+        <p>Para conhecer as formas de participação, consulte os contatos abaixo ou preencha o cadastro.</p>
+        <address>
+          <p>E-mail: <a href="mailto:contato@redeacolher.example">contato@redeacolher.example</a></p>
+          <p>Telefone: (11) 0000-0000</p>
+          <p>Endereço: Rua Exemplo, 100 — São Paulo/SP</p>
+        </address>
+        <p class="nota">Dados de contato fictícios, usados somente para demonstrar a estrutura do site acadêmico.</p>
+        <a href="cadastro.html">Preencher cadastro de participação</a>
+      </section>
+      <section class="container secao" aria-labelledby="titulo-frentes">
+        <div class="titulo-secao">
+          <div>
+            <h2 id="titulo-frentes">Áreas de atuação</h2>
+          </div>
+          <a class="link" href="projetos.html">Ver iniciativas</a>
+        </div>
+        <div class="areas">
+          <article class="area">
+            <h3>Aprender e compartilhar</h3>
+            <p>Apoio à leitura e oficinas que ajudam crianças e jovens a descobrir novas possibilidades.</p>
+            <a href="projetos.html#educacao">Conheça o projeto de educação</a>
+          </article>
+          <article class="area">
+            <h3>Alimentar com cuidado</h3>
+            <p>Mobilização comunitária para compartilhar alimentos e conversar sobre alimentação.</p>
+            <a href="projetos.html#alimentacao">Conheça o projeto de alimentação</a>
+          </article>
+          <article class="area">
+            <h3>Criar laços</h3>
+            <p>Encontros de convivência que aproximam gerações e fortalecem redes de apoio.</p>
+            <a href="projetos.html#convivencia">Conheça o projeto de convivência</a>
+          </article>
+        </div>
+      </section>
+      <section class="container convite" aria-labelledby="titulo-convite">
+        <div>
+          <h2 id="titulo-convite">Como participar</h2>
+          <p>Compartilhe seu tempo, suas habilidades ou seu interesse em apoiar as iniciativas.</p>
+        </div>
+        <a class="botao" href="cadastro.html">Quero participar</a>
+      </section>
+    </main>
+    <dialog id="modal-informacao" aria-labelledby="titulo-modal" aria-describedby="texto-modal">
+      <h2 id="titulo-modal">Como funciona o cadastro</h2>
+      <p id="texto-modal">Este formulário demonstra um cadastro de participação. Use apenas dados de teste. Nenhum dado é enviado ou armazenado, e não há inscrição ou doação real.</p>
+      <form method="dialog">
+        <button class="botao" autofocus>Fechar</button>
+      </form>
+    </dialog>
+    <footer class="rodape">
+      <div class="container">
+        <p><strong>Rede Acolher</strong><br> Comunidade, cuidado e oportunidades.</p>
+        <nav aria-label="Navegação do rodapé">
+          <ul>
+            <li><a href="index.html">Conheça a ONG</a></li>
+            <li><a href="projetos.html">Nossas iniciativas</a></li>
+            <li><a href="cadastro.html">Quero participar</a></li>
+          </ul>
+        </nav>
+        <p class="nota">Projeto acadêmico de Desenvolvimento front-end. <br> Organização e iniciativas fictícias. Não há envio de dados pessoais nem doações reais.</p>
+      </div>
+    </footer>
+  </body>
+</html>

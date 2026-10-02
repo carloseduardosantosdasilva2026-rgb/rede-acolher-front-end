@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Explore as iniciativas fictícias da Rede Acolher: educação, alimentação e convivência. Saiba como participar como voluntário ou apoiador.">
+    <meta name="theme-color" content="#245c40">
+    <title>Nossos projetos sociais | Rede Acolher</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script src="../js/modulos/templates.js" defer></script>
+    <script src="../js/modulos/armazenamento.js" defer></script>
+    <script src="../js/cadastro.js" defer></script>
+    <script src="../js/interface.js" defer></script>
+    <script src="../js/modulos/projetos.js" defer></script>
+    <script src="../js/modulos/roteamento.js" defer></script>
+    <script src="../js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+    <!-- Cabeçalho e links de navegação. -->
+    <header class="cabecalho">
+      <div class="container">
+        <a class="marca" href="index.html">Rede Acolher</a>
+        <button class="menu-botao" type="button" aria-controls="menu-principal" aria-expanded="false" hidden>☰ Menu</button>
+        <nav id="menu-principal" class="menu-principal" aria-label="Navegação principal">
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="projetos.html" aria-current="page">Projetos</a></li>
+            <li><a href="cadastro.html">Participe</a></li>
+            <li class="item-submenu">
+              <details class="dropdown">
+                <summary>Áreas de atuação</summary>
+                <ul class="submenu">
+                  <li><a href="projetos.html#educacao">Educação</a></li>
+                  <li><a href="projetos.html#alimentacao">Alimentação</a></li>
+                  <li><a href="projetos.html#convivencia">Convivência</a></li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Conteúdo principal da página. -->
+    <main id="conteudo" tabindex="-1">
+      <div class="container abertura">
+        <h1>Projetos sociais</h1>
+        <p class="introducao">Três frentes, um propósito: criar oportunidades e fortalecer a vida em comunidade. Conheça a proposta de cada projeto e as formas de participar.</p>
+        <nav class="atalhos" aria-label="Projetos nesta página">
+          <ul>
+            <li><a href="#educacao">Educação</a></li>
+            <li><a href="#alimentacao">Alimentação</a></li>
+            <li><a href="#convivencia">Convivência</a></li>
+            <li><a href="#voluntariado">Voluntariado</a></li>
+            <li><a href="#doacoes">Doações</a></li>
+          </ul>
+        </nav>
+      </div>
+      <section class="container projetos secao" aria-labelledby="titulo-projetos">
+        <h2 id="titulo-projetos">Projetos da Rede Acolher</h2>
+        <article id="educacao" class="projeto">
+          <span class="badge">Educação</span>
+          <picture>
+            <source srcset="../imagens/educacao.webp" type="image/webp">
+            <source srcset="../imagens/educacao.png" type="image/png">
+            <img src="../imagens/educacao.svg" width="480" height="360" alt="Ilustração de um livro aberto com uma pequena planta ao lado.">
+          </picture>
+          <div>
+            <h3>Aprender Juntos</h3>
+            <p>Uma proposta de apoio à leitura e de oficinas educativas para crianças e jovens, com atividades que valorizam a curiosidade e a troca de conhecimentos.</p>
+            <dl>
+              <dt>Público</dt>
+              <dd>Crianças e jovens da comunidade.</dd>
+              <dt>Atividades propostas</dt>
+              <dd>Rodas de leitura, apoio aos estudos e oficinas de inclusão digital.</dd>
+              <dt>Como ajudar</dt>
+              <dd>Compartilhar conhecimentos, organizar materiais ou apoiar a preparação das oficinas.</dd>
+            </dl>
+            <a class="botao" href="cadastro.html?projeto=educacao">Participar do Aprender Juntos</a>
+          </div>
+        </article>
+        <article id="alimentacao" class="projeto">
+          <span class="badge">Alimentação</span>
+          <picture>
+            <source srcset="../imagens/alimentacao.webp" type="image/webp">
+            <source srcset="../imagens/alimentacao.png" type="image/png">
+            <img src="../imagens/alimentacao.svg" width="480" height="360" alt="Ilustração de uma cesta com vegetais e alimentos.">
+          </picture>
+          <div>
+            <h3>Mesa Compartilhada</h3>
+            <p>Uma iniciativa de mobilização para apoiar famílias por meio de campanhas de alimentos e encontros sobre aproveitamento e preparo de refeições.</p>
+            <dl>
+              <dt>Público</dt>
+              <dd>Famílias em situação de vulnerabilidade social.</dd>
+              <dt>Atividades propostas</dt>
+              <dd>Organização de campanhas, montagem de cestas e oficinas de alimentação.</dd>
+              <dt>Como ajudar</dt>
+              <dd>Colaborar na organização, divulgar campanhas ou demonstrar interesse em apoiar com alimentos.</dd>
+            </dl>
+            <a class="botao" href="cadastro.html?projeto=alimentacao">Participar do Mesa Compartilhada</a>
+          </div>
+        </article>
+        <article id="convivencia" class="projeto">
+          <span class="badge">Convivência</span>
+          <picture>
+            <source srcset="../imagens/convivencia.webp" type="image/webp">
+            <source srcset="../imagens/convivencia.png" type="image/png">
+            <img src="../imagens/convivencia.svg" width="480" height="360" alt="Ilustração de duas pessoas conversando em um banco, junto a uma árvore.">
+          </picture>
+          <div>
+            <h3>Laços da Comunidade</h3>
+            <p>Encontros que aproximam pessoas de diferentes gerações, promovem escuta e incentivam atividades culturais e colaborativas.</p>
+            <dl>
+              <dt>Público</dt>
+              <dd>Moradores de todas as idades, com atenção às pessoas idosas.</dd>
+              <dt>Atividades propostas</dt>
+              <dd>Rodas de conversa, atividades culturais e encontros comunitários.</dd>
+              <dt>Como ajudar</dt>
+              <dd>Apoiar a organização dos encontros, compartilhar habilidades artísticas e acolher participantes.</dd>
+            </dl>
+            <a class="botao" href="cadastro.html?projeto=convivencia">Participar do Laços da Comunidade</a>
+          </div>
+        </article>
+      </section>
+      <section class="container" id="voluntariado" aria-labelledby="titulo-voluntariado">
+        <h2 id="titulo-voluntariado">Trabalho voluntário</h2>
+        <p>Você pode colaborar com seu tempo e suas habilidades nas atividades dos projetos.</p>
+        <ul>
+          <li>Educação: apoiar a leitura e ajudar nas oficinas.</li>
+          <li>Alimentação: organizar campanhas e preparar cestas.</li>
+          <li>Convivência: ajudar nos encontros e nas atividades culturais.</li>
+        </ul>
+        <p>Para demonstrar interesse, escolha a opção de voluntariado no cadastro, indique um projeto e informe sua disponibilidade.</p>
+        <a class="botao" href="cadastro.html">Cadastrar interesse em voluntariado</a>
+      </section>
+      <section class="container" id="doacoes" aria-labelledby="titulo-doacoes">
+        <h2 id="titulo-doacoes">Campanhas de doação</h2>
+        <p>A proposta da ONG prevê campanhas para reunir alimentos, materiais educativos e recursos financeiros destinados às atividades sociais.</p>
+        <h3>Como as campanhas seriam organizadas</h3>
+        <ol>
+          <li>Divulgar o objetivo da campanha e os itens ou recursos necessários.</li>
+          <li>Orientar os apoiadores sobre o recebimento e registrar as contribuições.</li>
+          <li>Destinar as doações ao projeto indicado e apresentar uma prestação de contas.</li>
+        </ol>
+        <h3>Como demonstrar interesse em contribuir</h3>
+        <p>No cadastro, selecione a opção de doador, escolha um projeto e descreva na mensagem se deseja apoiar com alimentos, materiais ou uma contribuição financeira.</p>
+        <p class="nota">Esta é uma proposta acadêmica de uma ONG fictícia. Não há pagamento ou recebimento de doações reais neste site.</p>
+        <a class="botao" href="cadastro.html">Cadastrar interesse em apoiar uma campanha</a>
+      </section>
+      <section class="container convite" aria-labelledby="titulo-participar">
+        <div>
+          <h2 id="titulo-participar">Participe dos projetos</h2>
+          <p>O cadastro permite demonstrar interesse em voluntariado, apoio como doador ou nas duas formas de colaboração.</p>
+        </div>
+        <a class="botao" href="cadastro.html">Preencher cadastro</a>
+      </section>
+    </main>
+    <dialog id="modal-informacao" aria-labelledby="titulo-modal" aria-describedby="texto-modal">
+      <h2 id="titulo-modal">Como funciona o cadastro</h2>
+      <p id="texto-modal">Este formulário demonstra um cadastro de participação. Use apenas dados de teste. Nenhum dado é enviado ou armazenado, e não há inscrição ou doação real.</p>
+      <form method="dialog">
+        <button class="botao" autofocus>Fechar</button>
+      </form>
+    </dialog>
+    <footer class="rodape">
+      <div class="container">
+        <p><strong>Rede Acolher</strong><br> Comunidade, cuidado e oportunidades.</p>
+        <nav aria-label="Navegação do rodapé">
+          <ul>
+            <li><a href="index.html">Conheça a ONG</a></li>
+            <li><a href="projetos.html">Nossas iniciativas</a></li>
+            <li><a href="cadastro.html">Quero participar</a></li>
+          </ul>
+        </nav>
+        <p class="nota">Projeto acadêmico de Desenvolvimento front-end. <br> Organização e iniciativas fictícias. Não há envio de dados pessoais nem doações reais.</p>
+      </div>
+    </footer>
+  </body>
+</html>

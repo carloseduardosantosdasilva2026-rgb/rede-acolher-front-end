@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Formulário acadêmico de participação na Rede Acolher. Cadastro demonstrativo com campos agrupados e validação de CPF, telefone e CEP.">
+    <meta name="theme-color" content="#245c40">
+    <title>Cadastro | Rede Acolher</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script src="../js/modulos/templates.js" defer></script>
+    <script src="../js/modulos/armazenamento.js" defer></script>
+    <script src="../js/cadastro.js" defer></script>
+    <script src="../js/interface.js" defer></script>
+    <script src="../js/modulos/projetos.js" defer></script>
+    <script src="../js/modulos/roteamento.js" defer></script>
+    <script src="../js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+    <!-- Cabeçalho e links de navegação. -->
+    <header class="cabecalho">
+      <div class="container">
+        <a class="marca" href="index.html">Rede Acolher</a>
+        <button class="menu-botao" type="button" aria-controls="menu-principal" aria-expanded="false" hidden>☰ Menu</button>
+        <nav id="menu-principal" class="menu-principal" aria-label="Navegação principal">
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="cadastro.html" aria-current="page">Participe</a></li>
+            <li class="item-submenu">
+              <details class="dropdown">
+                <summary>Áreas de atuação</summary>
+                <ul class="submenu">
+                  <li><a href="projetos.html#educacao">Educação</a></li>
+                  <li><a href="projetos.html#alimentacao">Alimentação</a></li>
+                  <li><a href="projetos.html#convivencia">Convivência</a></li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Conteúdo principal da página. -->
+    <main id="conteudo" tabindex="-1">
+      <div class="container abertura">
+        <h1>Cadastro de participação</h1>
+        <p class="introducao">Demonstre interesse em ser voluntário, doador ou nas duas formas de apoio. Comece contando um pouco sobre você.</p>
+      </div>
+      <div class="container cadastro-layout">
+        <aside class="painel" aria-labelledby="titulo-orientacoes">
+          <h2 id="titulo-orientacoes">Orientações para o cadastro</h2>
+          <ol>
+            <li>Informe seus dados de identificação e contato.</li>
+            <li>Preencha seu endereço.</li>
+            <li>Escolha como e em qual projeto deseja participar.</li>
+          </ol>
+          <p class="aviso"><strong>Esta é uma demonstração acadêmica.</strong> Use somente dados de teste. Os dados pessoais ficam apenas nos campos desta página. Somente as escolhas de participação, projeto e disponibilidade são salvas neste navegador após a simulação. Nenhuma inscrição ou doação real será realizada.</p>
+          <p>Os campos com asterisco (*) são obrigatórios. As máscaras são aplicadas enquanto você digita.</p>
+          <a href="projetos.html">Consultar os projetos</a>
+          <button type="button" class="botao botao-secundario abrir-modal" hidden>Sobre esta demonstração</button>
+        </aside>
+        <section class="formulario-area" aria-labelledby="titulo-formulario">
+          <h2 id="titulo-formulario">Cadastro de participação</h2>
+          <noscript>
+            <p class="aviso">Ative o JavaScript para testar as máscaras, as validações adicionais e a conclusão desta simulação. A navegação do site continua disponível.</p>
+          </noscript>
+          <p id="alerta-formulario" class="alerta alerta-erro" role="alert" hidden>Confira os campos indicados. Há dados obrigatórios vazios ou inválidos.</p>
+          <form id="formulario-cadastro" action="cadastro.html" method="post">
+            <fieldset>
+              <legend>1. Dados pessoais</legend>
+              <div class="campos">
+                <div class="campo">
+                  <label for="nome">Nome completo *</label>
+                  <input
+                    id="nome"
+                    name="nome"
+                    type="text"
+                    autocomplete="name"
+                    minlength="3"
+                    maxlength="100"
+                    required
+                    aria-describedby="nome-erro">
+                  <span class="erro" id="nome-erro" aria-live="polite"></span>
+                </div>
+                <div class="campo">
+                  <label for="email">E-mail *</label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    maxlength="150"
+                    required
+                    aria-describedby="email-ajuda email-erro">
+                  <small id="email-ajuda">Use um endereço como nome@exemplo.com.</small>
+                  <span class="erro" id="email-erro" aria-live="polite"></span>
+                </div>
+                <div class="campo">
+                  <label for="cpf">CPF *</label>
+                  <input
+                    id="cpf"
+                    name="cpf"
+                    type="text"
+                    inputmode="numeric"
+                    maxlength="14"
+                    pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}"
+                    title="CPF no formato 000.000.000-00"
+                    required
+                    aria-describedby="cpf-ajuda cpf-erro">
+                  <small id="cpf-ajuda">Digite 11 números. Formato: 000.000.000-00.</small>
+                  <span class="erro" id="cpf-erro" aria-live="polite"></span>
+                </div>
+                <div class="campo">
+                  <label for="telefone">Telefone com DDD *</label>
+                  <input
+                    id="telefone"
+                    name="telefone"
+                    type="tel"
+                    autocomplete="tel"
+                    inputmode="tel"
+                    maxlength="15"
+                    pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}"
+                    title="Telefone com DDD no formato (11) 91234-5678 ou (11) 2345-6789"
+                    required
+                    aria-describedby="telefone-ajuda telefone-erro">
+                  <small id="telefone-ajuda">Celular: (11) 91234-5678. Fixo: (11) 2345-6789.</small>
+                  <span class="erro" id="telefone-erro" aria-live="polite"></span>
+                </div>
+                <div class="campo">
+                  <label for="nascimento">Data de nascimento *</label>
+                  <input
+                    id="nascimento"
+                    name="nascimento"
+                    type="date"
+                    autocomplete="bday"
+                    min="1900-01-01"
+                    required
+                    aria-describedby="nascimento-ajuda nascimento-erro">
+                  <small id="nascimento-ajuda">Informe uma data entre 01/01/1900 e hoje.</small>
+                  <span class="erro" id="nascimento-erro" aria-live="polite"></span>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>2. Endereço</legend>
+              <div class="campos">
+                <div class="campo">
+                  <label for="cep">CEP *</label>
+                  <input
+                    id="cep"
+                    name="cep"
+                    type="text"
+                    autocomplete="postal-code"
+                    inputmode="numeric"
+                    maxlength="9"
+                    pattern="[0-9]{5}-[0-9]{3}"
+                    title="CEP no formato 00000-000"
+                    required
+                    aria-describedby="cep-ajuda cep-erro">
+                  <small id="cep-ajuda">Digite 8 números. Formato: 00000-000.</small>
+                  <span class="erro" id="cep-erro" aria-live="polite"></span>
+                </div>
+                <div class="campo">
+                  <label for="logradouro">Rua, avenida ou outro logradouro *</label>
+                  <input
+                    id="logradouro"
+                    name="logradouro"
+                    type="text"
+                    autocomplete="address-line1"
+                    minlength="3"
+                    maxlength="120"
+                    required
+                    aria-describedby="logradouro-erro">
+                  <span class="erro" id="logradouro-erro" aria-live="polite"></span>
+                </div>
+                <div class="campo">
+                  <label for="numero">Número *</label>
+                  <input id="numero" name="numero" type="text" maxlength="15" required aria-describedby="numero-ajuda numero-erro">
+                  <small id="numero-ajuda">Se não houver número, escreva S/N.</small>
+                  <span class="erro" id="numero-erro" aria-live="polite"></span>
+                </div>
+                <div class="campo">
+                  <label for="complemento">Complemento (opcional)</label>
+                  <input
+                    id="complemento"
+                    name="complemento"
+                    type="text"
+                    autocomplete="address-line2"
+                    maxlength="80"
+                    aria-describedby="complemento-erro">
+                  <span class="erro" id="complemento-erro" aria-live="polite"></span>
+                </div>
+                <div class="campo">
+                  <label for="bairro">Bairro *</label>
+                  <input id="bairro" name="bairro" type="text" minlength="2" maxlength="80" required aria-describedby="bairro-erro">
+                  <span class="erro" id="bairro-erro" aria-live="polite"></span>
+                </div>
+                <div class="campo">
+                  <label for="cidade">Cidade *</label>
+                  <input
+                    id="cidade"
+                    name="cidade"
+                    type="text"
+                    autocomplete="address-level2"
+                    minlength="2"
+                    maxlength="80"
+                    required
+                    aria-describedby="cidade-erro">
+                  <span class="erro" id="cidade-erro" aria-live="polite"></span>
+                </div>
+                <div class="campo">
+                  <label for="estado">Estado *</label>
+                  <select id="estado" name="estado" autocomplete="address-level1" required aria-describedby="estado-erro">
+                    <option value="">Selecione</option>
+                    <option value="AC">AC — Acre</option>
+                    <option value="AL">AL — Alagoas</option>
+                    <option value="AP">AP — Amapá</option>
+                    <option value="AM">AM — Amazonas</option>
+                    <option value="BA">BA — Bahia</option>
+                    <option value="CE">CE — Ceará</option>
+                    <option value="DF">DF — Distrito Federal</option>
+                    <option value="ES">ES — Espírito Santo</option>
+                    <option value="GO">GO — Goiás</option>
+                    <option value="MA">MA — Maranhão</option>
+                    <option value="MT">MT — Mato Grosso</option>
+                    <option value="MS">MS — Mato Grosso do Sul</option>
+                    <option value="MG">MG — Minas Gerais</option>
+                    <option value="PA">PA — Pará</option>
+                    <option value="PB">PB — Paraíba</option>
+                    <option value="PR">PR — Paraná</option>
+                    <option value="PE">PE — Pernambuco</option>
+                    <option value="PI">PI — Piauí</option>
+                    <option value="RJ">RJ — Rio de Janeiro</option>
+                    <option value="RN">RN — Rio Grande do Norte</option>
+                    <option value="RS">RS — Rio Grande do Sul</option>
+                    <option value="RO">RO — Rondônia</option>
+                    <option value="RR">RR — Roraima</option>
+                    <option value="SC">SC — Santa Catarina</option>
+                    <option value="SP">SP — São Paulo</option>
+                    <option value="SE">SE — Sergipe</option>
+                    <option value="TO">TO — Tocantins</option>
+                  </select>
+                  <span class="erro" id="estado-erro" aria-live="polite"></span>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>3. Participação</legend>
+              <div class="campos">
+                <div class="campo">
+                  <label for="participacao">Como você quer participar? *</label>
+                  <select id="participacao" name="participacao" required aria-describedby="participacao-erro">
+                    <option value="">Selecione</option>
+                    <option value="voluntario">Como voluntário</option>
+                    <option value="doador">Como doador</option>
+                    <option value="ambos">Como voluntário e doador</option>
+                  </select>
+                  <span class="erro" id="participacao-erro" aria-live="polite"></span>
+                </div>
+                <div class="campo">
+                  <label for="projeto">Projeto de interesse *</label>
+                  <select id="projeto" name="projeto" required aria-describedby="projeto-erro">
+                    <option value="">Selecione</option>
+                    <option value="educacao">Aprender Juntos</option>
+                    <option value="alimentacao">Mesa Compartilhada</option>
+                    <option value="convivencia">Laços da Comunidade</option>
+                    <option value="todos">Ainda não tenho preferência</option>
+                  </select>
+                  <span class="erro" id="projeto-erro" aria-live="polite"></span>
+                </div>
+                <div class="campo">
+                  <label for="disponibilidade" id="label-disponibilidade">Disponibilidade (opcional)</label>
+                  <select id="disponibilidade" name="disponibilidade" aria-describedby="disponibilidade-ajuda disponibilidade-erro">
+                    <option value="">Selecione</option>
+                    <option value="semana-manha">Durante a semana, de manhã</option>
+                    <option value="semana-tarde">Durante a semana, à tarde</option>
+                    <option value="semana-noite">Durante a semana, à noite</option>
+                    <option value="fim-semana">Nos fins de semana</option>
+                    <option value="combinar">A combinar</option>
+                  </select>
+                  <small id="disponibilidade-ajuda">Obrigatória para quem escolhe voluntariado. Opcional para doadores.</small>
+                  <span class="erro" id="disponibilidade-erro" aria-live="polite"></span>
+                </div>
+                <div class="campo">
+                  <label for="mensagem">Habilidades ou forma de apoio (opcional)</label>
+                  <textarea id="mensagem" name="mensagem" rows="4" maxlength="600" aria-describedby="mensagem-ajuda mensagem-erro">
+                  </textarea>
+                  <small id="mensagem-ajuda">Conte como gostaria de ajudar, em até 600 caracteres.</small>
+                  <span class="erro" id="mensagem-erro" aria-live="polite"></span>
+                </div>
+              </div>
+            </fieldset>
+            <div class="campo confirmacao">
+              <label for="confirmacao">
+                <input id="confirmacao" name="confirmacao" type="checkbox" value="ciente" required aria-describedby="confirmacao-erro">
+                <span>Estou ciente de que este cadastro é uma simulação acadêmica e estou utilizando dados de teste. *</span>
+              </label>
+              <span class="erro" id="confirmacao-erro" aria-live="polite"></span>
+            </div>
+            <div class="acoes">
+              <button id="concluir" class="botao" type="submit" disabled>
+                Concluir simulação
+              </button>
+              <button class="botao botao-secundario" type="reset">
+                Limpar campos
+              </button>
+            </div>
+          </form>
+          <div id="resultado" class="resultado" role="status" tabindex="-1" hidden>
+          </div>
+        </section>
+      </div>
+    </main>
+    <dialog id="modal-informacao" aria-labelledby="titulo-modal" aria-describedby="texto-modal">
+      <h2 id="titulo-modal">Como funciona o cadastro</h2>
+      <p id="texto-modal">Este formulário demonstra um cadastro de participação. Use apenas dados de teste. Nenhum dado é enviado ou armazenado, e não há inscrição ou doação real.</p>
+      <form method="dialog">
+        <button class="botao" autofocus>Fechar</button>
+      </form>
+    </dialog>
+    <footer class="rodape">
+      <div class="container">
+        <p><strong>Rede Acolher</strong><br> Comunidade, cuidado e oportunidades.</p>
+        <nav aria-label="Navegação do rodapé">
+          <ul>
+            <li><a href="index.html">Conheça a ONG</a></li>
+            <li><a href="projetos.html">Nossas iniciativas</a></li>
+            <li><a href="cadastro.html">Quero participar</a></li>
+          </ul>
+        </nav>
+        <p class="nota">Projeto acadêmico de Desenvolvimento front-end. <br> Organização e iniciativas fictícias. Não há envio de dados pessoais nem doações reais.</p>
+      </div>
+    </footer>
+  </body>
+</html>
