@@ -19,3 +19,7 @@ As três vistas passaram pela análise automatizada do axe-core com as regras WC
 O foco do cabeçalho foi ajustado para uma cor clara sobre o verde. O carregamento inicial conserva o atalho como primeiro destino do Tab. Escape também fecha o menu quando seu botão está focado.
 
 A análise automatizada e a inspeção da árvore não substituem um teste humano completo com leitor de tela. Não foi realizado um teste com NVDA ou uma certificação formal de conformidade.
+## Modos de contraste
+
+O CSS responde a `prefers-contrast: more` com texto preto, fundos brancos, bordas pretas e links sublinhados. Em `forced-colors: active`, respeita as cores do sistema e usa `Highlight` para o foco. A preferência é definida no sistema/navegador; não há alternador de modo escuro.
+
