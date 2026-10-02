@@ -305,6 +305,34 @@ dialog[open] { animation: aparecer 150ms ease-out; }
 
 /* O fundo verde do cabeçalho exige um foco claro para ser visível. */
 header :focus-visible { outline-color: #ffda69; }
+
+/* Respeita a preferência de maior contraste do sistema. */
+@media (prefers-contrast: more) {
+  :root {
+    --cor-primaria: #000000;
+    --cor-primaria-escura: #000000;
+    --cor-secundaria: #000000;
+    --cor-foco: #0000cc;
+    --cor-erro: #000000;
+    --cor-texto: #000000;
+    --cor-texto-suave: #000000;
+    --cor-fundo: #ffffff;
+    --cor-superficie: #ffffff;
+    --cor-painel: #ffffff;
+    --cor-borda: #000000;
+    --cor-rodape: #ffffff;
+  }
+
+  .area, .projeto, .painel { border-color: #000000; }
+  .aviso, .alerta { background-color: #ffffff; }
+  a { text-decoration: underline; }
+}
+
+/* O navegador aplica as cores escolhidas pelo usuário neste modo. */
+@media (forced-colors: active) {
+  :focus-visible, header :focus-visible { outline-color: Highlight; }
+  .botao, .badge, .projeto, .painel { border: 1px solid CanvasText; }
+}
 .pular { z-index: 10; }
 
 /* Links longos continuam dentro da página em telas estreitas e com zoom. */
