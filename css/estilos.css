@@ -3,7 +3,7 @@
   --cor-primaria: #245c40;
   --cor-primaria-escura: #193f2c;
   --cor-secundaria: #9b6f20;
-  --cor-foco: #b65d14;
+  --cor-foco: #111111;
   --cor-erro: #a32624;
   --cor-texto: #222222;
   --cor-texto-suave: #444444;
@@ -301,3 +301,11 @@ dialog[open] { animation: aparecer 150ms ease-out; }
 @media (prefers-reduced-motion: reduce) {
   dialog[open] { animation: none; }
 }
+
+
+/* O fundo verde do cabeçalho exige um foco claro para ser visível. */
+header :focus-visible { outline-color: #ffda69; }
+.pular { z-index: 10; }
+
+/* Links longos continuam dentro da página em telas estreitas e com zoom. */
+address a { overflow-wrap: anywhere; }

@@ -27,6 +27,11 @@ menu.addEventListener('keydown', function (evento) {
   }
 });
 
+// Escape também fecha o menu quando o foco está no próprio botão.
+botaoMenu.addEventListener('keydown', function (evento) {
+  if (evento.key === 'Escape') fecharMenu();
+});
+
 const telaAmpla = window.matchMedia('(min-width: 768px)');
 telaAmpla.addEventListener('change', fecharMenu);
 
