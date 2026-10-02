@@ -18,6 +18,7 @@ RedeAcolher.iniciarRotas = function () {
 
   function renderizar() {
     if (location.hash === '#conteudo') return;
+    const primeiraExibicao = atual === '';
     const partes = location.hash.slice(1).split('/');
     const rota = Object.hasOwn(titulos, partes[0]) ? partes[0] : inicial;
     // Substitui apenas a área principal; cabeçalho e rodapé permanecem.
@@ -40,6 +41,8 @@ RedeAcolher.iniciarRotas = function () {
     });
     RedeAcolher.fecharMenu();
     document.querySelectorAll('header details[open]').forEach(item => { item.open = false; });
+    // No carregamento inicial, o primeiro Tab alcança o link de atalho.
+    if (primeiraExibicao) return;
     const destino = rota === 'projetos' && partes[1] ? document.getElementById(partes[1]) : null;
     if (destino && conteudo.contains(destino)) {
       destino.setAttribute('tabindex', '-1');
